@@ -1,0 +1,165 @@
+<sebm-google-map class="map-component"
+				 [latitude]="mapProperties.latitude"
+				 [longitude]="mapProperties.longitude"
+				 [zoom]="mapProperties.zoom"
+				 [disableDefaultUI]="mapProperties.disableDefaultUI"
+				 [zoomControl]="mapProperties.zoomControl"
+				 [streetViewControl]="streetViewControl"
+				 [usePanning]="mapProperties.usePanning"
+				 (panmove)="disableLiveTrack($event)"
+				 (centerChange)="centerChange($event)">
+	<sebm-google-map-circle [latitude]="positionCircle.latitude"
+							[longitude]="positionCircle.longitude"
+							[radius]="positionCircle.radius"
+							[fillColor]="positionCircle.fillColor"
+							[fillOpacity]="positionCircle.fillOpacity">
+	</sebm-google-map-circle>
+	<sebm-google-map-circle [latitude]="positionCircle.latitude"
+							[longitude]="positionCircle.longitude"
+							[radius]="5"
+							[fillColor]="positionCircle.fillColor"
+							[fillOpacity]="1">
+	</sebm-google-map-circle>
+	<sebm-google-map-marker *ngFor="let marker of mapMarkers" [latitude]="marker.latitude"
+							[longitude]="marker.longitude"
+							[draggable]="marker.draggable"
+							(markerClick)="clicked($event)"
+							data-establishment-id="marker.establishment.id">
+	</sebm-google-map-marker>
+</sebm-google-map>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<div class="btn-group btn-block">
+				<button type="button" class="btn btn-outline-primary" (click)="toggleLiveTrack($event)">
+					<i class="fa fa-dot-circle-o" [ngClass]="{'faa-passing animated': liveTrack}"></i>
+				</button>
+
+				<button type="button" class="btn btn-outline-primary" data-toggle="collapse" (click)="testMarker()">
+					<i class="fa fa-map-marker"></i> <i class="fa fa-plus"></i>
+				</button>
+
+				<button type="button" class="btn btn-outline-primary" data-toggle="collapse" (click)="removeMarker()">
+					<i class="fa fa-map-marker"></i> <i class="fa fa-minus"></i>
+				</button>
+
+				<button type="button" class="btn btn-outline-primary" data-toggle="collapse" (click)="testClient()">
+					<i class="fa fa-user"></i> <i class="fa fa-plus"></i>
+				</button>
+			</div>
+
+			<button class="btn btn-primary btn-block" data-toggle="collapse" data-target="#drawer">
+				<i class="fa fa-caret-down"></i>
+			</button>
+
+			<div class="collapse" id="drawer">
+				<div class="card" *ngIf="mapMarkers.length === 0">
+					<div class="card-block">
+						<h3>Nothing to show here.</h3>
+						<p>Click on the <kbd><i class="fa fa-map-marker"></i> <i class="fa fa-plus"></i></kbd> to load some markers!</p>
+					</div>
+				</div>
+
+				<div class="card" *ngFor="let marker of mapMarkers">
+					<div class="card-block">
+						<div class="row">
+							<div class="col-3">
+								<img class="img-fluid" src="http://www.ikea.com/ca/en/images/products/drona-box-yellow__0311971_PE429574_S4.JPG" />
+							</div>
+							<div class="col-9">
+								<h5>{{ marker.establishment.name }}</h5>
+								<p>{{ marker.establishment.street_name + " " + marker.establishment.street_number + ", " + marker.establishment.postal_code}}</p>
+							</div>
+						</div>
+
+						<div class="row collapse" attr.id="{{ marker.establishment.id }}">
+							<div class="col-12">
+								<form>
+									<div class="form-group">
+										<label for="establishmentName">Name</label>
+										<input type="text" id="establishmentName" class="form-control" placeholder="Name" [(value)]="marker.establishment.name">
+										
+										<label for="establishmentPhone">Phone#</label>
+										<input type="text" id="establishmentPhone" class="form-control" placeholder="Phone#" [(value)]="marker.establishment.phone">
+
+										<label for="establishmentStreetNumber">Street Number</label>
+										<input type="text" id="establishmentStreetNumber" class="form-control" placeholder="Street Number" [(value)]="marker.establishment.street_number">
+
+										<label for="establishmentStreetName">Steet Name</label>
+										<input type="text" id="establishmentPhone" class="form-control" placeholder="Steet Name" [(value)]="marker.establishment.street_name">
+
+										<label for="establishmentStreetName">Postal Code</label>
+										<input type="text" id="establishmentPhone" class="form-control" placeholder="Postal Code" [(value)]="marker.establishment.postal_code">
+										
+										<div class="btn-group btn-block">
+											<button type="button" class="btn btn-outline-primary btn-block" (click)="toggleLiveTrack($event)">
+												<i class="fa fa-dot-circle-o" [ngClass]="{'faa-passing animated': liveTrack}"></i>
+											</button>
+
+											<button type="button" class="btn btn-outline-primary btn-block" data-toggle="collapse" (click)="testMarker()">
+												<i class="fa fa-map-marker"></i> <i class="fa fa-plus"></i>
+											</button>
+
+											<button type="button" class="btn btn-outline-primary btn-block" data-toggle="collapse" (click)="removeMarker()">
+												<i class="fa fa-map-marker"></i> <i class="fa fa-minus"></i>
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<button class="btn btn-outline-primary btn-block" data-toggle="collapse" attr.data-target="{{ '#' + marker.establishment.id }}">
+							<i class="fa fa-caret-down"></i>
+						</button>
+					</div>
+				</div>
+
+				<div class="card" *ngFor="let client of clientList">
+					<div class="card-block">
+						<div class="row">
+							<div class="col-3">
+								<img class="img-fluid" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png" />
+							</div>
+							<div class="col-9">
+								<h5>{{ client.surname + ", "}}</h5>
+								<p>{{ client.firstname }}</p>
+							</div>
+						</div>
+
+						<div class="row collapse" attr.id="{{ client.id }}">
+							<div class="col-12">
+								<form>
+									<div class="form-group">
+										<label for="clientFirsname">First Name</label>
+										<input type="text" id="clientFirsname" class="form-control" placeholder="First Name" [(value)]="client.firstname">
+
+										<label for="clientSurname">Last Name</label>
+										<input type="text" id="clientSurname" class="form-control" placeholder="Last Name" [(value)]="client.surname">
+
+										<label for="clientPhone">Phone</label>
+										<input type="text" id="clientPhone" class="form-control" placeholder="Phone#" [(value)]="client.phone">
+
+										<label for="clientEmail">Email</label>
+										<input type="email" id="clientEmail" class="form-control" placeholder="Email" [(value)]="client.email">
+
+										<label for="clientCreationDate">Creation Date</label>
+										<input type="date" id="clientCreationDate" class="form-control" placeholder="Creation Date" [(value)]="client.creation_date">
+
+										<label for="clientActive">Is Active</label>
+										<input type="text" id="clientActive" class="form-control" placeholder="Is Active" [(value)]="client.active">
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<button class="btn btn-outline-primary btn-block" data-toggle="collapse" attr.data-target="{{ '#' + client.id }}">
+							<i class="fa fa-caret-down"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

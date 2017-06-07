@@ -1,0 +1,12 @@
+.sebm-google-map-container {
+	height: 100vh;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+.container-fluid {
+	margin:auto;
+	margin-top: 1vh;
+	max-width: 300px;
+}

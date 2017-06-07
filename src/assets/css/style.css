@@ -1,0 +1,108 @@
+html, body, .angular-google-map,
+.angular-google-map-container {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+	/*background-image: url("/assets/Backgrounds/Background - Noise 2.png");*/
+	font-size: 1rem;
+}
+
+header {
+	background-color: white;
+}
+
+.container-fluid {
+	max-width: 1440px;
+	min-width: 150px;
+}
+
+.card {
+	margin-top: .75rem;
+	margin-bottom: .75rem;
+	word-wrap: break-word;
+}
+
+/* MATERIAL DESIGN : Overrides */
+.btn-flat-primary, 
+.btn-flat-primary:active, 
+.btn-flat-primary:focus, 
+.btn-flat-primary:hover,
+.btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+.btn-outline-primary:hover {
+	color: #4285F4 !important;
+}
+.btn-primary,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+	background-color: #4285F4 !important;
+	color: white !important;
+}
+.btn-primary:disabled, 
+.btn-primary.disabled {
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	color: white;
+	background-color: #1152be;
+}
+.form-control:focus, .custom-select:focus {
+	border-bottom-color: #4285F4;
+	border-bottom-width: 2px;
+    outline: 0;
+}
+.card-block:last-child {
+	padding-bottom: 1rem;
+}
+
+
+.custom-checkbox .custom-control-indicator {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='#000000' fill-opacity='0.54' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-indicator {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='#4285F4' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+}
+.custom-checkbox .custom-control-input:disabled ~ .custom-control-indicator {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='#000000' fill-opacity='0.26' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+}
+.custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-indicator {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='#000000' fill-opacity='0.26' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+}
+.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-indicator {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='#000000' fill-opacity='0.54' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cpath d='M0 0h24v24H0z' id='a'/%3E%3C/defs%3E%3CclipPath id='b'%3E%3Cuse overflow='visible' xlink:href='#a'/%3E%3C/clipPath%3E%3Cpath clip-path='url(#b)' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z'/%3E%3C/svg%3E");
+}
+.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+	border-radius: 20px; 
+}
+.toggle.ios .toggle-handle { 
+	border-radius: 20px; 
+}
+
+img {
+	margin: auto;
+}
+
+.card-img-overlay {
+	pointer-events: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+	transition: .5s ease;
+	
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, .3)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, .3)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, .3)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, .3)); /* Standard syntax */
+}
+
+.card-img-overlay > .card-title {
+	font-size: 3rem;
+	position: absolute;
+	bottom: 1.25rem;
+	right: 1.25rem;
+}

@@ -1,0 +1,9 @@
+<form>
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="Search..." name="searchValue" [(ngModel)]="searchValue" />
+		<button type="submit" (click)="search(this)" class="btn btn-primary btn-md ladda-button" [ladda]="loadingProgress" data-spinner-color="#FFF" data-style="expand-right">
+			<i class="fa fa-arrow-right" aria-hidden="true"></i>
+		</button>
+	</div>
+
+</form>
