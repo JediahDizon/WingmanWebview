@@ -27,9 +27,9 @@ That way, you don't have to do any installation to see the WebView.
 
 ## Current Screenshot
 ### Latest Available Screenshot
-![Current screenshot of Wingman Webview](https://gitlab.com/wingman-git/webview/raw/developer/doc/Screenshot%20-%204.PNG "Current screenshot of the Wingman Webview")
+![Current screenshot of Wingman Webview](https://github.com/JediahDizon/WingmanWebview/blob/master/doc/Screenshot%20-%204.PNG "Current screenshot of the Wingman Webview")
 
 ## Field Testing
 ### Latest Available Field-Testing Video
-https://gitlab.com/wingman-git/webview/blob/developer/doc/Field%20Testing.avi
+https://github.com/JediahDizon/WingmanWebview/blob/master/doc/Field%20Testing.avi
 
