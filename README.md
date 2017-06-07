@@ -25,7 +25,8 @@ That way, you don't have to do any installation to see the WebView.
 - There's a difference in granting "Normal Permissions" (`PROTECTION_NORMAL`) and runtime-persmissions for Android 6.0+.
   - I spent hours straight trying to figure out permission allowance only to realize that my Android 6.0+ permissions must be granted at runtime.
 
-## Current Screenshot
+## Current Screenshots
+The previous screenshots are located in `WingmanWebview/doc/`.
 ### Latest Available Screenshot
 ![Current screenshot of Wingman Webview](https://github.com/JediahDizon/WingmanWebview/blob/master/doc/Screenshot%20-%204.PNG "Current screenshot of the Wingman Webview")
 
