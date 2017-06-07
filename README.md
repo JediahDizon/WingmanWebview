@@ -1,4 +1,5 @@
 # WingMan - Webview
+<b>Please note, this is a clone of the project located in Gitlab.</b>
 The front-end side of the Wingman application. This is the interface that the users of the application will utilize.
 
 ## Dependencies
