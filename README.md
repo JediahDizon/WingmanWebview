@@ -26,10 +26,10 @@ That way, you don't have to do any installation to see the WebView.
   - I spent hours straight trying to figure out permission allowance only to realize that my Android 6.0+ permissions must be granted at runtime.
 
 ## Current Screenshot
-### v1.0.0-alpha.2
+### Latest Available Screenshot
 ![Current screenshot of Wingman Webview](https://gitlab.com/wingman-git/webview/raw/developer/doc/Screenshot%20-%204.PNG "Current screenshot of the Wingman Webview")
 
 ## Field Testing
-### v0.0.1-alpha.1
+### Latest Available Field-Testing Video
 https://gitlab.com/wingman-git/webview/blob/developer/doc/Field%20Testing.avi
 
