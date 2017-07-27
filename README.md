@@ -1,6 +1,6 @@
 # WingMan - Webview
 The front-end side of the Wingman application. This is the interface that the users of the application will utilize.
-<b>Please note, this is a clone of the project located in Gitlab.</b>
+<b>Please note, this is a work-in-progress clone of the project located in Gitlab.</b>
 
 ## Dependencies
 - [Node Package Manager](https://www.npmjs.com/) - Used to install the dependencies needed
